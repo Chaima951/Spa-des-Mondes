@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Spa des Mondes – Spa & Beauté</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* --------- BASE --------- */
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f9f9f9;
+color:#333;
+}
+
+/* --------- HERO --------- */
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero-content{
+background:rgba(0,0,0,0.55);
+padding:70px;
+border-radius:35px;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:1.3rem;
+margin-bottom:30px;
+}
+
+.btn{
+background:linear-gradient(135deg,#2bb0a6,#d4af37);
+padding:15px 35px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:500;
+display:inline-block;
+}
+
+/* --------- SECTIONS --------- */
+.section{
+padding:90px 10%;
+text-align:center;
+}
+
+.section h2{
+font-family:'Playfair Display',serif;
+font-size:2.8rem;
+margin-bottom:50px;
+}
+
+.colored{
+background:linear-gradient(135deg,#e0f7f5,#fff0dc);
+}
+
+/* --------- GRID CARDS --------- */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 15px 30px rgba(0,0,0,0.15);
+transition:transform .4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.card h3{
+padding:20px;
+color:#2bb0a6;
+}
+
+/* --------- GALLERY --------- */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+border-radius:30px;
+object-fit:cover;
+}
+
+/* --------- WORLD --------- */
+.world{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.world-card{
+width:300px;
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 20px 40px rgba(0,0,0,0.18);
+}
+
+.world-card img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
+
+.world-card h4{
+margin:15px 0 5px;
+font-size:1.4rem;
+color:#d4af37;
+}
+
+.world-card p{
+padding-bottom:20px;
+}
+
+/* --------- RESERVATION FORM --------- */
+.reservation{
+background:linear-gradient(135deg,#2bb0a6,#d4af37);
+padding:120px 10%;
+display:flex;
+justify-content:center;
+}
+
+.form-container{
+background:white;
+padding:60px;
+border-radius:35px;
+max-width:500px;
+width:100%;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+.form-container h2{
+font-family:'Playfair Display',serif;
+color:#2bb0a6;
+margin-bottom:10px;
+}
+
+.form-container p{
+margin-bottom:35px;
+color:#555;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input{
+padding:15px 20px;
+border-radius:30px;
+border:1px solid #ccc;
+font-size:1rem;
+outline:none;
+}
+
+input:focus{
+border-color:#2bb0a6;
+}
+
+button{
+background:linear-gradient(135deg,#2bb0a6,#d4af37);
+color:white;
+border:none;
+padding:15px;
+border-radius:30px;
+font-size:1rem;
+cursor:pointer;
+font-weight:500;
+}
+
+/* --------- FOOTER --------- */
+footer{
+background:#1f2f2e;
+color:white;
+text-align:center;
+padding:25px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Spa des Mondes</h1>
+<p>Voyage sensoriel & beauté autour du monde</p>
+<a href="#reservation" class="btn">Réserver maintenant</a>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+<h2>Un voyage bien-être unique</h2>
+<p>Découvrez des soins inspirés des traditions du monde, dans un univers luxueux, coloré et apaisant.</p>
+</section>
+
+<!-- SOINS -->
+<section class="section colored">
+<h2>Nos Soins Signature</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35">
+<h3>Massage Asiatique</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874">
+<h3>Massage Relaxant</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6">
+<h3>Hammam Oriental</h3>
+</div>
+
+<!-- ✅ IMAGE MODIFIÉE ICI -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881">
+<h3>Soin Visage</h3>
+</div>
+
+</div>
+</section>
+
+<!-- JACUZZI -->
+<section class="section">
+<h2>Jacuzzi & Espaces Détente</h2>
+<div class="gallery">
+<!-- Jacuzzi (vue de face / baignoire balnéo) -->
+<img src="https://images.unsplash.com/photo-1728486884112-e6e5d7ccfea5?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1600">
+<!-- Produits beauté en ambiance spa -->
+<img src="https://images.unsplash.com/photo-1761864293840-cf73a186bff8?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1600">
+<!-- Massage en cours -->
+<img src="https://images.unsplash.com/photo-1639162906614-0603b0ae95fd?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1600">
+</div>
+</section>
+
+<!-- RITUELS -->
+<section class="section colored">
+<h2>Rituels du Monde</h2>
+<div class="world">
+
+<div class="world-card">
+<img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2">
+<h4>Asie</h4>
+<p>Énergie & harmonie</p>
+</div>
+
+<div class="world-card">
+<img src="https://images.unsplash.com/photo-1556228720-195a672e8a03">
+<h4>Orient</h4>
+<p>Purification & douceur</p>
+</div>
+
+<div class="world-card">
+<img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef">
+<h4>Tropiques</h4>
+<p>Relaxation exotique</p>
+</div>
+
+</div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation" class="reservation">
+<div class="form-container">
+<h2>Prendre rendez-vous</h2>
+<p>Merci de remplir vos informations</p>
+
+<form>
+<input type="text" placeholder="Nom" required>
+<input type="text" placeholder="Prénom" required>
+<input type="tel" placeholder="Numéro de téléphone" required>
+<input type="email" placeholder="Adresse email" required>
+<button type="submit">Envoyer la demande</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Spa des Mondes – Spa Beauté & Voyage</p>
+</footer>
+
+</body>
+</html>
