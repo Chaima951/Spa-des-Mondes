@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique | Rituels du Monde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">RITUELS DU MONDE</a></div>
+        <div class="nav-links">
+            <a href="index.html">L'Esprit</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="cursor: default;">Univers ▾</a>
+                <div class="dropdown-content">
+                    <a href="univ-europe.html">Europe</a>
+                    <a href="univ-asie.html">Asie</a>
+                    <a href="univ-afrique.html">Afrique</a>
+                    <a href="univ-polynesie.html">Polynésie</a>
+                    <a href="univ-amerique.html">Amériques</a>
+                </div>
+            </div>
+            <a href="evenements.html">Événements</a>
+            <a href="boutique.html" class="active">Boutique</a>
+            <a href="contact.html">Contact</a>
+            
+            <div class="cart-icon-wrap snipcart-checkout">
+                <i class="fas fa-shopping-bag" style="font-size: 1.2rem;"></i>
+                <span class="cart-count snipcart-items-count">0</span>
+            </div>
+
+            <a href="reservation.html" class="btn-nav-resa">Réserver</a>
+        </div>
+    </nav>
+
+    <header class="shop-hero">
+        <div class="container">
+            <h1>La Boutique Sensorielle</h1>
+            <p>Prolongez l'expérience du spa chez vous.</p>
+        </div>
+    </header>
+
+    <section class="container section-padding">
+        <div class="shop-filters">
+            <button class="shop-filter-btn active">Tous</button>
+            <button class="shop-filter-btn">Visage</button>
+            <button class="shop-filter-btn">Corps</button>
+        </div>
+
+        <div class="shop-grid">
+            <div class="shop-item">
+                <div class="shop-img-wrap"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800" alt="Crème"></div>
+                <div class="shop-info">
+                    <span class="shop-brand">Caudalie</span>
+                    <h3 class="shop-title">Crème Vinosource</h3>
+                    <span class="shop-price">45.00 €</span>
+                    <button class="add-btn snipcart-add-item" data-item-id="p1" data-item-price="45.00" data-item-url="/boutique.html" data-item-name="Crème Vinosource" data-item-shippable="true">Ajouter</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <div class="shop-img-wrap"><img src="https://images.unsplash.com/photo-1608248597279-f99d160bfbc8?q=80&w=800" alt="Huile"></div>
+                <div class="shop-info">
+                    <span class="shop-brand">Pure Fiji</span>
+                    <h3 class="shop-title">Huile Coco</h3>
+                    <span class="shop-price">32.00 €</span>
+                    <button class="add-btn snipcart-add-item" data-item-id="p2" data-item-price="32.00" data-item-url="/boutique.html" data-item-name="Huile Coco" data-item-shippable="true">Ajouter</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <div class="shop-img-wrap"><img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=800" alt="Bougie"></div>
+                <div class="shop-info">
+                    <span class="shop-brand">Ambiance</span>
+                    <h3 class="shop-title">Bougie Voyage</h3>
+                    <span class="shop-price">29.00 €</span>
+                    <button class="add-btn snipcart-add-item" data-item-id="p3" data-item-price="29.00" data-item-url="/boutique.html" data-item-name="Bougie Voyage" data-item-shippable="true">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Rituels du Monde</h4>
+                <p>12 Rue du Voyage, Rennes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+    <div hidden id="snipcart" 
+         data-api-key="ZDUxZTkzZGEtMTAwMC00OGM2LWI1NDctYTg3MmU4YjA2ZGE5NjM5MDQ1NDgyMTU1OTUwNzU3" 
+         data-config-modal-style="side" 
+         data-currency="eur"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

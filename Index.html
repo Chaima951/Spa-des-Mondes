@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rituels du Monde | Spa Holistique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><a href="index.html">RITUELS DU MONDE</a></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">L'Esprit</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="cursor: default;">Univers ▾</a>
+                <div class="dropdown-content">
+                    <a href="univ-europe.html">Europe (Vinothérapie)</a>
+                    <a href="univ-asie.html">Asie (Kobido & Énergie)</a>
+                    <a href="univ-afrique.html">Afrique (Hammam)</a>
+                    <a href="univ-polynesie.html">Polynésie (Lomi Lomi)</a>
+                    <a href="univ-amerique.html">Amériques (Deep Tissue)</a>
+                </div>
+            </div>
+            <a href="evenements.html">Événements</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+            
+            <div class="cart-icon-wrap snipcart-checkout">
+                <i class="fas fa-shopping-bag" style="font-size: 1.2rem;"></i>
+                <span class="cart-count snipcart-items-count">0</span>
+            </div>
+
+            <a href="reservation.html" class="btn-nav-resa">Réserver</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Voyagez sans partir</h1>
+            <p>Une immersion sensorielle au cœur des traditions du monde.</p>
+            <a href="#experiences" class="btn">Commencer le voyage</a>
+        </div>
+    </header>
+
+    <section class="storytelling">
+        <span style="color:var(--gold); text-transform:uppercase; letter-spacing:2px; font-size:0.9rem;">Notre Vision</span>
+        <h2>L'authenticité retrouvée</h2>
+        <div class="story-grid">
+            <div class="story-text">
+                <p>Né d'une passion pour les cultures du monde et d'un parcours dans les spas hôteliers, <strong>Rituels du Monde</strong> comble un manque : vivre une immersion réelle sans quitter la France.</p>
+                <p>Inspiré par la rigueur du soin au Japon et l'accueil en Espagne, chaque rituel respecte l'énergie du corps et l'authenticité du geste. Ici, le temps s'arrête pour laisser place à la reconnexion à soi.</p>
+                <p style="margin-top:20px; font-style:italic; color:#666;">"Bien plus qu'un spa, une destination."</p>
+            </div>
+            <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=800');"></div>
+        </div>
+    </section>
+
+    <section id="experiences" class="section-padding" style="background-color: var(--bg-body);">
+        <div style="text-align:center; margin-bottom: 50px;">
+            <span style="color:var(--gold); text-transform:uppercase; letter-spacing:2px;">Nos Destinations</span>
+            <h2>Choisissez votre Rituel</h2>
+            <p>5 Continents. 5 Ambiances. Une évasion absolue.</p>
+        </div>
+
+        <div class="sezame-grid">
+            
+            <div class="sezame-card" onclick="location.href='univ-europe.html'">
+                <div class="sez-img-container">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800" class="sez-img" alt="Europe">
+                </div>
+                <div class="sez-tags">
+                    <span class="sez-tag">Vinothérapie</span>
+                    <span class="sez-tag">Thalasso</span>
+                </div>
+                <h3 class="sez-title">L'Élégance Française</h3>
+                <p class="sez-desc">Caudalie & Soins Marins <span class="dot-europe">●</span> Europe</p>
+                <p class="sez-price">À partir de 95 €</p>
+            </div>
+
+            <div class="sezame-card" onclick="location.href='univ-asie.html'">
+                <div class="sez-img-container">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800" class="sez-img" alt="Asie">
+                </div>
+                <div class="sez-tags">
+                    <span class="sez-tag">Kobido</span>
+                    <span class="sez-tag">Énergie</span>
+                </div>
+                <h3 class="sez-title">Harmonie du Qi</h3>
+                <p class="sez-desc">Japon & Bali <span class="dot-asie">●</span> Asie</p>
+                <p class="sez-price">À partir de 110 €</p>
+            </div>
+
+            <div class="sezame-card" onclick="location.href='univ-afrique.html'">
+                <div class="sez-img-container">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800" class="sez-img" alt="Afrique">
+                </div>
+                <div class="sez-tags">
+                    <span class="sez-tag">Hammam</span>
+                    <span class="sez-tag">Savon Noir</span>
+                </div>
+                <h3 class="sez-title">Rituel Oriental</h3>
+                <p class="sez-desc">Maroc & Traditions <span class="dot-afrique">●</span> Afrique</p>
+                <p class="sez-price">À partir de 85 €</p>
+            </div>
+
+            <div class="sezame-card" onclick="location.href='univ-polynesie.html'">
+                <div class="sez-img-container">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800" class="sez-img" alt="Polynésie">
+                </div>
+                <div class="sez-tags">
+                    <span class="sez-tag">Lomi Lomi</span>
+                    <span class="sez-tag">Fleurs</span>
+                </div>
+                <h3 class="sez-title">Escale Pacifique</h3>
+                <p class="sez-desc">Hawaï & Tahiti <span class="dot-polynesie">●</span> Océanie</p>
+                <p class="sez-price">À partir de 105 €</p>
+            </div>
+
+            <div class="sezame-card" onclick="location.href='univ-amerique.html'">
+                <div class="sez-img-container">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800" class="sez-img" alt="Amériques">
+                </div>
+                <div class="sez-tags">
+                    <span class="sez-tag">Deep Tissue</span>
+                    <span class="sez-tag">Ancrage</span>
+                </div>
+                <h3 class="sez-title">Force de la Terre</h3>
+                <p class="sez-desc">USA & Natifs <span class="dot-amerique">●</span> Amériques</p>
+                <p class="sez-price">À partir de 100 €</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Rituels du Monde</h4>
+                <p>12 Rue du Voyage, 35000 Rennes</p>
+                <p>02 99 00 00 00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Univers</h4>
+                <a href="univ-europe.html">Europe</a>
+                <a href="univ-asie.html">Asie</a>
+                <a href="univ-afrique.html">Afrique</a>
+            </div>
+            <div class="footer-col">
+                <h4>Informations</h4>
+                <a href="contact.html">Mentions Légales</a>
+                <a href="contact.html">CGV</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Rituels du Monde.</div>
+    </footer>
+
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+    <div hidden id="snipcart" 
+         data-api-key="ZDUxZTkzZGEtMTAwMC00OGM2LWI1NDctYTg3MmU4YjA2ZGE5NjM5MDQ1NDgyMTU1OTUwNzU3" 
+         data-config-modal-style="side" 
+         data-currency="eur"></div>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>

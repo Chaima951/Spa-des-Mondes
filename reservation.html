@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver | Rituels du Monde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">RITUELS DU MONDE</a></div>
+        <div class="nav-links">
+            <a href="index.html">L'Esprit</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="cursor: default;">Univers ▾</a>
+                <div class="dropdown-content">
+                    <a href="univ-europe.html">Europe (Vinothérapie)</a>
+                    <a href="univ-asie.html">Asie (Kobido & Énergie)</a>
+                    <a href="univ-afrique.html">Afrique (Hammam)</a>
+                    <a href="univ-polynesie.html">Polynésie (Lomi Lomi)</a>
+                    <a href="univ-amerique.html">Amériques (Deep Tissue)</a>
+                </div>
+            </div>
+            <a href="evenements.html">Événements</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+            
+            <div class="cart-icon-wrap snipcart-checkout">
+                <i class="fas fa-shopping-bag" style="font-size: 1.2rem;"></i>
+                <span class="cart-count snipcart-items-count">0</span>
+            </div>
+
+            <a href="reservation.html" class="active" style="color:var(--gold);">Réserver</a>
+        </div>
+    </nav>
+
+    <div class="booking-container">
+        <aside class="sidebar">
+            <h3>Votre Réservation</h3>
+            <div class="summary-row">
+                <label>Expérience</label>
+                <strong id="sum-soin" style="color:var(--gold);">Sélectionnez un soin</strong>
+            </div>
+            <div class="summary-row">
+                <label>Créneau</label>
+                <strong id="sum-date">--/-- à --h--</strong>
+            </div>
+            <div class="summary-row">
+                <label>Total à régler</label>
+                <strong id="sum-price" style="font-size:1.4rem;">0.00 €</strong>
+            </div>
+            <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
+            <div style="font-size:0.85rem; color:#666; line-height:1.5;">
+                <p>✓ Paiement sécurisé immédiat</p>
+                <p>✓ Confirmation par email</p>
+                <p>✓ Annulation jusqu'à 24h avant</p>
+            </div>
+        </aside>
+
+        <main class="main-booking">
+            <div class="steps">
+                <div class="step-bar active" id="bar-1"></div>
+                <div class="step-bar" id="bar-2"></div>
+                <div class="step-bar" id="bar-3"></div>
+            </div>
+
+            <div id="step-1" class="step-content active">
+                <h2>1. Choisissez votre Rituel</h2>
+                <p style="margin-bottom:20px; color:#666;">Cliquez sur une expérience pour la sélectionner.</p>
+                
+                <h4 style="margin:20px 0;">Europe & Océan</h4>
+                <div class="service-card" onclick="selectService('Massage Blue Lagoon', 95, 'srv-1', 'Soin fluide inspiré de l\'Islande.')" id="srv-1">
+                    <div><h4>Massage Blue Lagoon (1h)</h4><span style="font-size:0.9rem; color:#666;">Relaxant, fluide et enveloppant.</span></div>
+                    <div class="srv-price">95 €</div>
+                </div>
+
+                <h4 style="margin:20px 0;">Asie Ancestrale</h4>
+                <div class="service-card" onclick="selectService('Massage Balinais', 110, 'srv-2', 'Massage énergétique profond.')" id="srv-2">
+                    <div><h4>Massage Balinais (1h15)</h4><span style="font-size:0.9rem; color:#666;">Authentique et énergétique (Non Thaï).</span></div>
+                    <div class="srv-price">110 €</div>
+                </div>
+                <div class="service-card" onclick="selectService('Rituel Kobido', 130, 'srv-3', 'Lifting naturel japonais.')" id="srv-3">
+                    <div><h4>Rituel Kobido Visage (1h)</h4><span style="font-size:0.9rem; color:#666;">Lifting naturel japonais & Skincare.</span></div>
+                    <div class="srv-price">130 €</div>
+                </div>
+
+                <h4 style="margin:20px 0;">Afrique & Orient</h4>
+                <div class="service-card" onclick="selectService('Rituel Oriental Complet', 150, 'srv-4', 'Hammam + Gommage + Massage.')" id="srv-4">
+                    <div><h4>Rituel Oriental (1h30)</h4><span style="font-size:0.9rem; color:#666;">Hammam + Gommage Savon Noir + Rhassoul.</span></div>
+                    <div class="srv-price">150 €</div>
+                </div>
+            </div>
+
+            <div id="step-2" class="step-content">
+                <h2>2. Date & Praticienne</h2>
+                <div class="form-grid">
+                    <div>
+                        <label>Praticienne (Optionnel)</label>
+                        <select id="input-staff">
+                            <option value="Indifférent">Indifférent (Premier dispo)</option>
+                            <option value="Sarah">Sarah (Spécialiste Asie)</option>
+                            <option value="Amel">Amel (Spécialiste Orient)</option>
+                            <option value="Julie">Julie (Massages Sportifs)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Choisissez une date et heure</label>
+                        <input type="datetime-local" id="input-date" onchange="window.updateDateDisplay(this.value)">
+                    </div>
+                </div>
+                <button class="btn" style="float:right; margin-top:30px;" onclick="window.goToStep(3)">Suivant</button>
+                <button class="btn" style="float:left; margin-top:30px; background:white; color:var(--dark-text);" onclick="window.goToStep(1)">Retour</button>
+            </div>
+
+            <div id="step-3" class="step-content">
+                <h2>3. Personnalisation</h2>
+                <p style="margin-bottom:20px;">Pour que tout soit prêt à votre arrivée.</p>
+                
+                <div class="form-grid">
+                    <div>
+                        <label>Pression souhaitée</label>
+                        <select id="input-pression">
+                            <option value="Moyenne">Moyenne (Standard)</option>
+                            <option value="Douce">Douce & Cocooning</option>
+                            <option value="Ferme">Ferme / Deep Tissue</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Ambiance Musicale</label>
+                        <select id="input-music">
+                            <option value="Nature">Sons de la Nature</option>
+                            <option value="Silence">Silence complet</option>
+                            <option value="Piano">Piano Minimaliste</option>
+                            <option value="Bols">Bols Tibétains</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Boisson d'après-soin</label>
+                        <select id="input-drink">
+                            <option value="Thé Vert">Thé Vert Japonais</option>
+                            <option value="Infusion">Infusion Hibiscus</option>
+                            <option value="Eau Citron">Eau Détox Citron</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div style="margin-top:15px;">
+                    <label>Remarques</label>
+                    <textarea id="input-notes" rows="3" placeholder="Dites-nous tout..."></textarea>
+                </div>
+
+                <button class="btn" style="width:100%; margin-top:30px; font-weight:bold;" onclick="window.finalizeBooking()">Valider et Payer</button>
+                <button class="btn" style="margin-top:10px; background:white; color:var(--dark-text); border:none; width:100%;" onclick="window.goToStep(2)">Retour</button>
+            </div>
+        </main>
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+    
+    <div hidden id="snipcart" 
+         data-api-key="ZDUxZTkzZGEtMTAwMC00OGM2LWI1NDctYTg3MmU4YjA2ZGE5NjM5MDQ1NDgyMTU1OTUwNzU3" 
+         data-config-modal-style="side" 
+         data-currency="eur"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

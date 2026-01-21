@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polynésie | Rituels du Monde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .univ-hero {
+            height: 60vh;
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; position: relative;
+        }
+        .univ-details { display: flex; max-width: 1100px; margin: 80px auto; gap: 60px; padding: 0 20px; align-items: center; }
+        .univ-text { flex: 1; }
+        .univ-img-block { flex: 1; height: 500px; background-size: cover; background-position: center; border-radius: 4px; }
+        @media (max-width: 900px) { .univ-details { flex-direction: column-reverse; } .univ-img-block { width: 100%; height: 300px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">RITUELS DU MONDE</a></div>
+        <div class="nav-links">
+            <a href="index.html">L'Esprit</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="cursor: default; color:var(--gold);">Univers ▾</a>
+                <div class="dropdown-content">
+                    <a href="univ-europe.html">Europe</a>
+                    <a href="univ-asie.html">Asie</a>
+                    <a href="univ-afrique.html">Afrique</a>
+                    <a href="univ-polynesie.html">Polynésie</a>
+                    <a href="univ-amerique.html">Amériques</a>
+                </div>
+            </div>
+            <a href="evenements.html">Événements</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html" class="btn-nav-resa">Réserver</a>
+        </div>
+    </nav>
+
+    <header class="univ-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920');">
+        <div class="hero-content">
+            <h1>Escale Pacifique</h1>
+            <p>Lomi Lomi, fleurs tropicales et lâcher-prise.</p>
+        </div>
+    </header>
+
+    <section class="univ-details">
+        <div class="univ-text">
+            <span class="u-tag" style="color:var(--u-polynesie)">Hawaï & Tahiti</span>
+            <h2>Ondes & Lagon</h2>
+            <p>Une invitation au voyage sensoriel avec les senteurs de Monoï et de fleurs de Tiaré. Nous utilisons les marques <strong>Pure Fiji</strong> et <strong>Hei Poa</strong> pour une immersion totale[cite: 45].</p>
+            
+            <h4 style="margin-top: 30px; margin-bottom: 15px;">Soins Signatures :</h4>
+            <ul class="soins-list">
+                <li><strong>Lomi Lomi Nui (Hawaï) :</strong> Massage rythmé imitant le mouvement des vagues[cite: 42].</li>
+                <li><strong>Taurumi Polynésien :</strong> Soin traditionnel spirituel et corporel[cite: 43].</li>
+                <li><strong>Rituels Floraux :</strong> Bains et gommages aux fleurs relaxantes[cite: 44].</li>
+            </ul>
+
+            <a href="reservation.html" class="btn" style="margin-top: 30px;">Réserver</a>
+        </div>
+        <div class="univ-img-block" style="background-image: url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=800');"></div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Rituels du Monde</h4>
+                <p>12 Rue du Voyage, Rennes</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

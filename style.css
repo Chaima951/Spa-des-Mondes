@@ -1,0 +1,382 @@
+/* ==========================================================================
+   PARTIE 1 : CONFIGURATION ET STRUCTURE GLOBALE
+   ========================================================================== */
+
+/* 1. PALETTE DE COULEURS ET POLICES */
+:root {
+    /* Fonds */
+    --bg-body: #FDFBF7; /* Crème très léger */
+    --bg-sand: #F3EFE6; /* Sable chaud (pour alterner les sections) */
+    --white: #FFFFFF;
+    
+    /* Textes */
+    --dark-text: #2C2C2C; /* Noir charbon */
+    --gold: #C5A059;      /* Doré principal */
+    --gold-hover: #b08d4b;
+    --grey-light: #999999;
+
+    /* Couleurs des Univers */
+    --u-europe: #002366;    /* Bleu Profond */
+    --u-asie: #00A86B;      /* Vert Jade */
+    --u-afrique: #CC7722;   /* Ocre */
+    --u-polynesie: #009DC4; /* Bleu Lagon */
+    --u-amerique: #8B4513;  /* Terre */
+
+    /* UI (Ombres, arrondis) */
+    --font-title: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --radius: 4px;
+    --shadow: 0 10px 30px rgba(44, 44, 44, 0.08);
+    --transition: all 0.3s ease;
+}
+
+/* 2. RESET (Mise à zéro) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-body);
+    color: var(--dark-text);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    padding-top: 90px; /* Espace pour ne pas cacher le contenu sous le menu */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 3. TYPOGRAPHIE GLOBALE */
+h1, h2, h3 { font-family: var(--font-title); font-weight: 600; line-height: 1.2; }
+h1 { font-size: 3.5rem; margin-bottom: 20px; }
+h2 { font-size: 2.6rem; margin-bottom: 30px; text-align: center; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+img { width: 100%; height: auto; object-fit: cover; display: block; }
+ul { list-style: none; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 90px 0; }
+section:nth-child(even) { background-color: var(--bg-sand); } /* Une section sur deux colorée */
+
+/* 4. BOUTONS (Style Global) */
+.btn {
+    display: inline-block; padding: 15px 35px;
+    background: var(--dark-text); color: var(--white);
+    text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;
+    border: 1px solid var(--dark-text); cursor: pointer; transition: var(--transition);
+}
+.btn:hover { background: var(--gold); border-color: var(--gold); }
+
+/* 5. BARRE DE NAVIGATION (FIXE) */
+nav {
+    position: fixed; top: 0; left: 0; width: 100%; height: 90px;
+    background: rgba(253, 251, 247, 0.98); /* Fond quasi opaque */
+    backdrop-filter: blur(8px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 40px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo a {
+    font-family: var(--font-title); font-size: 1.6rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex; gap: 30px; height: 100%; align-items: center;
+}
+
+/* Liens du menu */
+.nav-links a, .dropdown {
+    display: flex; align-items: center;
+    height: 100%; /* Prend toute la hauteur pour éviter le bug de survol */
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+    font-weight: 500; cursor: pointer; position: relative;
+}
+.nav-links a:hover, .nav-links a.active, .dropbtn:hover { color: var(--gold); }
+
+/* Bouton Réserver (Menu) */
+.btn-nav-resa {
+    padding: 0 25px !important; height: 40px !important;
+    border: 1px solid var(--dark-text); border-radius: 50px;
+    display: flex; justify-content: center;
+}
+.btn-nav-resa:hover { background: var(--dark-text); color: var(--white) !important; }
+
+/* 6. MENU DÉROULANT (Correction Bug Espace) */
+.dropdown-content {
+    display: none; position: absolute;
+    top: 100%; /* Collé pile sous la barre */
+    left: -20px;
+    background-color: var(--white); min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 1000;
+    border-top: 3px solid var(--gold); border-radius: 0 0 4px 4px;
+    opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropdown:hover .dropdown-content { display: block; opacity: 1; transform: translateY(0); }
+
+.dropdown-content a {
+    height: auto; padding: 15px 20px; display: block;
+    border-bottom: 1px solid #f9f9f9; color: var(--dark-text);
+    text-transform: capitalize; font-size: 0.85rem; letter-spacing: 0.5px;
+}
+.dropdown-content a:hover { background-color: var(--bg-sand); color: var(--gold); padding-left: 25px; }
+
+/* 7. PIED DE PAGE (FOOTER) */
+footer {
+    background-color: #1a1a1a; color: #aeaeae;
+    padding: 60px 20px 20px; margin-top: auto;
+}
+.footer-content {
+    max-width: 1200px; margin: 0 auto; display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;
+}
+.footer-col h4 { color: var(--white); margin-bottom: 20px; font-family: var(--font-title); font-size: 1.2rem; }
+.footer-col a { display: block; margin-bottom: 10px; font-size: 0.9rem; }
+.footer-col a:hover { color: var(--gold); }
+.copyright { text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; }
+
+/* ==========================================================================
+   PARTIE 2 : DESIGN DES PAGES
+   ========================================================================== */
+
+/* --- PAGE ACCUEIL --- */
+.hero-section {
+    height: calc(100vh - 90px);
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1920') center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+}
+.hero-content { max-width: 800px; padding: 20px; animation: fadeIn 1s ease; }
+
+.storytelling { background: var(--bg-body); text-align: center; max-width: 900px; margin: 0 auto; padding: 100px 20px; }
+.story-grid { display: flex; gap: 50px; text-align: left; align-items: center; margin-top: 50px; }
+.story-text { flex: 1; }
+.story-img { flex: 1; height: 350px; background-color: #dcdcdc; border-radius: 4px; overflow: hidden; }
+
+/* Grille des 5 Univers (Accueil) */
+.home-univers-title { text-align: center; padding: 60px 20px 30px; background: var(--bg-body); }
+.home-univers-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; width: 100%; }
+
+.uni-square { position: relative; aspect-ratio: 1 / 1; overflow: hidden; cursor: pointer; }
+.uni-sq-bg { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.6s ease; }
+.uni-sq-overlay {
+    position: absolute; inset: 0; background: rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: var(--white); transition: 0.4s; padding: 20px; text-align: center;
+}
+.uni-sq-overlay h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 10px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+.uni-sq-link { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid var(--white); padding-bottom: 5px; opacity: 0.8; transition: 0.3s; }
+.uni-square:hover .uni-sq-bg { transform: scale(1.1); }
+.uni-square:hover .uni-sq-overlay { background: rgba(0,0,0,0.5); }
+.uni-square:hover .uni-sq-link { opacity: 1; border-color: var(--gold); }
+
+/* --- PAGE UNIVERS (Détails) --- */
+.univ-hero { height: 60vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); }
+.univ-details { display: flex; max-width: 1100px; margin: 80px auto; gap: 60px; padding: 0 20px; align-items: center; }
+.univ-text { flex: 1; }
+.univ-img-block { flex: 1; height: 500px; background-size: cover; border-radius: 4px; }
+
+.u-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; font-weight: bold; }
+.soins-list li { margin-bottom: 8px; font-size: 0.95rem; padding-left: 15px; position: relative; }
+.soins-list li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
+
+/* Grille Style "Sezame" */
+.sezame-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 40px; max-width: 1300px; margin: 0 auto; padding: 20px; }
+.sezame-card { background: transparent; cursor: pointer; transition: transform 0.3s ease; }
+.sezame-card:hover { transform: translateY(-5px); }
+.sez-img-container { width: 100%; height: 350px; border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
+.sez-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.sezame-card:hover .sez-img { transform: scale(1.05); }
+.sez-tags { display: flex; gap: 10px; margin-bottom: 10px; }
+.sez-tag { background: #F0EBE0; padding: 6px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; font-weight: 600; color: var(--dark-text); }
+.sez-title { font-family: var(--font-title); font-size: 1.6rem; margin-bottom: 5px; line-height: 1.2; }
+.sez-desc { font-size: 0.95rem; color: #666; margin-bottom: 5px; }
+.sez-price { font-size: 0.9rem; color: #888; }
+
+/* Couleurs Points */
+.dot-europe { color: var(--u-europe); } .dot-asie { color: var(--u-asie); }
+.dot-afrique { color: var(--u-afrique); } .dot-polynesie { color: var(--u-polynesie); }
+.dot-amerique { color: #8B4513; }
+
+/* --- PAGE ÉVÉNEMENTS --- */
+.zen-header { background: var(--bg-sand); padding: 80px 20px; text-align: center; }
+.cats-info { background: var(--white); padding: 40px; max-width: 700px; margin: 30px auto; border-radius: 4px; text-align: left; box-shadow: var(--shadow); }
+
+/* Zen Split */
+.split-feature { display: flex; align-items: center; background-color: var(--white); overflow: hidden; }
+.split-img { flex: 1; height: 600px; position: relative; }
+.split-img img { width: 100%; height: 100%; object-fit: cover; }
+.split-content { flex: 1; padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+.split-tag { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; margin-bottom: 20px; display: block; }
+.split-content h2 { text-align: left; margin-bottom: 30px; font-size: 2.8rem; }
+.feature-list { margin: 30px 0; }
+.feature-item { display: flex; gap: 15px; margin-bottom: 20px; }
+.f-icon { font-size: 1.5rem; color: var(--gold); }
+
+/* Agenda */
+.events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+.event-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.05); }
+.event-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+.event-img-wrap { height: 250px; position: relative; overflow: hidden; }
+.event-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.event-card:hover .event-img-wrap img { transform: scale(1.05); }
+.date-badge { position: absolute; top: 20px; left: 20px; background: var(--white); padding: 10px 15px; text-align: center; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.db-day { display: block; font-size: 1.2rem; font-weight: 700; color: var(--dark-text); line-height: 1; }
+.db-month { display: block; font-size: 0.7rem; text-transform: uppercase; color: var(--gold); letter-spacing: 1px; margin-top: 2px; }
+.event-info { padding: 30px; }
+.event-cat { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--grey-light); margin-bottom: 10px; display: block; }
+.event-title { font-family: var(--font-title); font-size: 1.5rem; margin-bottom: 15px; color: var(--dark-text); }
+.event-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+
+/* --- PAGE CONTACT --- */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+.contact-left { background: var(--bg-sand); padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+.contact-right { background: var(--white); padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+
+/* --- PAGE RESERVATION (WIZARD) --- */
+.booking-container { display: flex; max-width: 1100px; margin: 50px auto; background: var(--white); border-radius: 4px; box-shadow: var(--shadow); overflow: hidden; min-height: 600px; }
+.sidebar { width: 30%; background: var(--bg-sand); padding: 40px; border-right: 1px solid #eee; }
+.sidebar h3 { font-size: 1.2rem; color: var(--gold); margin-bottom: 20px; }
+.summary-row label { font-size: 0.75rem; text-transform: uppercase; color: #888; display: block; }
+.summary-row strong { font-size: 1rem; color: var(--dark-text); display: block; margin-bottom: 15px; }
+.main-booking { width: 70%; padding: 50px; }
+.steps { display: flex; gap: 10px; margin-bottom: 40px; }
+.step-bar { flex: 1; height: 4px; background: #eee; border-radius: 2px; }
+.step-bar.active { background: var(--gold); }
+.step-content { display: none; animation: fadeIn 0.5s; }
+.step-content.active { display: block; }
+.service-card { display: flex; justify-content: space-between; align-items: center; padding: 20px; border: 1px solid #eee; margin-bottom: 15px; border-radius: 4px; cursor: pointer; transition: 0.2s; background: var(--white); }
+.service-card:hover, .service-card.selected { border-color: var(--gold); background: #FFFCF5; }
+.srv-price { font-weight: bold; font-size: 1.1rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+input, select, textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); margin-bottom: 15px; background: var(--white); }
+
+/* ==========================================================================
+   PARTIE 3 : BOUTIQUE, FONCTIONS ET MOBILE
+   ========================================================================== */
+
+/* 1. BOUTIQUE (Grille & Cartes) */
+.shop-hero { 
+    height: 40vh; background: #e8e4dc; 
+    display: flex; align-items: center; justify-content: center; text-align: center; 
+}
+
+/* Filtres (Boutons fins) */
+.shop-filters { 
+    display: flex; justify-content: center; gap: 12px; margin: 30px 0 50px; flex-wrap: wrap; 
+}
+.shop-filter-btn { 
+    padding: 8px 20px; border: 1px solid #e0e0e0; border-radius: 50px; 
+    cursor: pointer; background: var(--white); transition: 0.3s;
+    font-family: var(--font-body); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666;
+}
+.shop-filter-btn:hover, .shop-filter-btn.active { 
+    background: var(--dark-text); color: var(--white); border-color: var(--dark-text); 
+}
+
+/* Grille Boutique (Force 3 colonnes) */
+.shop-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px; width: 100%; margin-top: 40px; 
+}
+
+/* Carte Produit */
+.shop-item { 
+    background: var(--white); border: 1px solid #f0f0f0; border-radius: 4px; 
+    overflow: hidden; transition: 0.3s; position: relative; 
+}
+.shop-item:hover { 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-3px); 
+}
+
+.shop-img-wrap { 
+    height: 280px; position: relative; overflow: hidden; background: #f9f9f9; 
+    display: flex; align-items: center; justify-content: center;
+}
+.shop-img-wrap img { 
+    width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; 
+}
+.shop-item:hover .shop-img-wrap img { transform: scale(1.08); }
+
+.shop-info { padding: 20px; text-align: center; }
+.shop-brand { 
+    display: block; font-size: 0.65rem; color: var(--grey-light); 
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; 
+}
+.shop-title { 
+    font-family: var(--font-title); font-size: 1.2rem; margin-bottom: 8px; color: var(--dark-text); 
+}
+.shop-price { 
+    color: var(--gold); font-weight: 600; font-size: 1rem; display: block; margin-bottom: 15px; 
+}
+
+/* Bouton Ajouter au panier (Style propre) */
+.add-btn { 
+    width: 100%; padding: 10px; border: 1px solid var(--dark-text); background: var(--white); 
+    color: var(--dark-text); text-transform: uppercase; font-size: 0.7rem; 
+    font-weight: bold; cursor: pointer; transition: 0.3s; letter-spacing: 1px;
+}
+.add-btn:hover { background: var(--dark-text); color: var(--white); }
+
+
+/* 2. ÉLÉMENTS DU PANIER (Icone, Sidebar) */
+.cart-icon-wrap { position: relative; cursor: pointer; }
+.cart-count {
+    position: absolute; top: -8px; right: -12px;
+    background: var(--gold); color: var(--white); font-size: 0.7rem;
+    width: 18px; height: 18px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+}
+
+/* Note: Le CSS du panier Snipcart est chargé automatiquement par leur script */
+
+
+/* 3. CHATBOT FLOTTANT */
+#chatbot-widget { position: fixed; bottom: 30px; right: 30px; z-index: 9999; }
+.chat-btn { 
+    width: 60px; height: 60px; background: var(--gold); color: var(--white); 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+    cursor: pointer; font-size: 1.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.2); 
+    transition: transform 0.3s; 
+}
+.chat-btn:hover { transform: scale(1.1); }
+
+.chat-window { 
+    position: absolute; bottom: 80px; right: 0; width: 350px; height: 500px; 
+    background: var(--white); border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); 
+    display: none; flex-direction: column; overflow: hidden; border: 1px solid #eee; 
+}
+.chat-window.open { display: flex; animation: fadeIn 0.3s; }
+
+.chat-header { background: var(--dark-text); color: var(--white); padding: 15px; display: flex; justify-content: space-between; }
+.chat-body { flex: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; }
+.chat-input { padding: 15px; border-top: 1px solid #eee; display: flex; gap: 10px; background: var(--white); }
+
+.msg { padding: 10px 15px; border-radius: 8px; margin-bottom: 10px; max-width: 80%; font-size: 0.9rem; }
+.msg.bot { background: var(--white); border: 1px solid #eee; }
+.msg.user { background: var(--gold); color: var(--white); margin-left: auto; }
+
+
+/* 4. RESPONSIVE MOBILE */
+@media (max-width: 900px) {
+    .nav-links { display: none; } /* Prévoir menu burger pour la suite */
+    
+    .univers-row { flex-direction: column !important; }
+    .univ-img-block { width: 100%; height: 300px; }
+    
+    .booking-container, .contact-layout { flex-direction: column; }
+    .sidebar, .main-booking, .contact-left, .contact-right { width: 100%; padding: 30px 20px; }
+    
+    .home-univers-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    /* Mobile : Boutique en 1 colonne pour lisibilité */
+    .shop-grid { grid-template-columns: 1fr !important; }
+    
+    .split-feature { flex-direction: column; }
+    .split-img { width: 100%; height: 400px; }
+    .split-content { width: 100%; padding: 40px 20px; }
+}
+
+@media (max-width: 480px) {
+    .home-univers-grid { grid-template-columns: 1fr; }
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

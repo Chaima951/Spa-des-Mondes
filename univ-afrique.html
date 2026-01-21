@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrique & Orient | Rituels du Monde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .univ-hero {
+            height: 60vh;
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; position: relative;
+        }
+        .univ-details { display: flex; max-width: 1100px; margin: 80px auto; gap: 60px; padding: 0 20px; align-items: center; }
+        .univ-text { flex: 1; }
+        .univ-img-block { flex: 1; height: 500px; background-size: cover; background-position: center; border-radius: 4px; }
+        @media (max-width: 900px) { .univ-details { flex-direction: column-reverse; } .univ-img-block { width: 100%; height: 300px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">RITUELS DU MONDE</a></div>
+        <div class="nav-links">
+            <a href="index.html">L'Esprit</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="cursor: default; color:var(--gold);">Univers ▾</a>
+                <div class="dropdown-content">
+                    <a href="univ-europe.html">Europe</a>
+                    <a href="univ-asie.html">Asie</a>
+                    <a href="univ-afrique.html">Afrique</a>
+                    <a href="univ-polynesie.html">Polynésie</a>
+                    <a href="univ-amerique.html">Amériques</a>
+                </div>
+            </div>
+            <a href="evenements.html">Événements</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html" class="btn-nav-resa">Réserver</a>
+        </div>
+    </nav>
+
+    <header class="univ-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=1920');">
+        <div class="hero-content">
+            <h1>Terres d'Orient</h1>
+            <p>Hammam, purification et traditions du désert.</p>
+        </div>
+    </header>
+
+    <section class="univ-details">
+        <div class="univ-text">
+            <span class="u-tag" style="color:var(--u-afrique)">Maroc & Traditions</span>
+            <h2>Chaleur & Purification</h2>
+            <p>Plongez dans la chaleur bienfaisante du Hammam marocain[cite: 35]. Ici, le temps s'arrête pour laisser place à la purification du corps et de l'esprit, utilisant des ingrédients naturels comme le savon noir[cite: 36].</p>
+            
+            <h4 style="margin-top: 30px; margin-bottom: 15px;">Soins Signatures :</h4>
+            <ul class="soins-list">
+                <li><strong>Rituel Hammam :</strong> Bain de vapeur traditionnel.</li>
+                <li><strong>Gommage Savon Noir :</strong> Exfoliation profonde au gant Kessa.</li>
+                <li><strong>Enveloppement Rhassoul :</strong> Argile naturelle détoxifiante[cite: 37].</li>
+                <li><strong>Soin Jeune Maman :</strong> Rituel post-accouchement (resserrage du bassin)[cite: 39].</li>
+            </ul>
+
+            <a href="reservation.html" class="btn" style="margin-top: 30px;">Réserver</a>
+        </div>
+        <div class="univ-img-block" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800');"></div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Rituels du Monde</h4>
+                <p>12 Rue du Voyage, Rennes</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

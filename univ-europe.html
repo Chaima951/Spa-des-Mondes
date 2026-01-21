@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe | Rituels du Monde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .univ-hero {
+            height: 60vh;
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; position: relative;
+        }
+        .univ-details { display: flex; max-width: 1100px; margin: 80px auto; gap: 60px; padding: 0 20px; align-items: center; }
+        .univ-text { flex: 1; }
+        .univ-img-block { flex: 1; height: 500px; background-size: cover; background-position: center; border-radius: 4px; }
+        @media (max-width: 900px) { .univ-details { flex-direction: column-reverse; } .univ-img-block { width: 100%; height: 300px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">RITUELS DU MONDE</a></div>
+        <div class="nav-links">
+            <a href="index.html">L'Esprit</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="cursor: default; color:var(--gold);">Univers ▾</a>
+                <div class="dropdown-content">
+                    <a href="univ-europe.html">Europe</a>
+                    <a href="univ-asie.html">Asie</a>
+                    <a href="univ-afrique.html">Afrique</a>
+                    <a href="univ-polynesie.html">Polynésie</a>
+                    <a href="univ-amerique.html">Amériques</a>
+                </div>
+            </div>
+            <a href="evenements.html">Événements</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html" class="btn-nav-resa">Réserver</a>
+        </div>
+    </nav>
+
+    <header class="univ-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1920');">
+        <div class="hero-content">
+            <h1>L'Élégance Européenne</h1>
+            <p>Vinothérapie, Thalasso et force de l'Océan.</p>
+        </div>
+    </header>
+
+    <section class="univ-details">
+        <div class="univ-text">
+            <span class="u-tag" style="color:var(--u-europe)">France & Islande</span>
+            <h2>Terroir & Océan</h2>
+            <p>Cet univers célèbre le savoir-faire occidental, alliant la richesse de la terre et la puissance de la mer. Nous collaborons avec <strong>Caudalie</strong> pour une expérience de vinothérapie authentique[cite: 27].</p>
+            
+            <h4 style="margin-top: 30px; margin-bottom: 15px;">Soins Signatures :</h4>
+            <ul class="soins-list">
+                <li><strong>Vinothérapie :</strong> Soins du corps à base de raisin[cite: 23].</li>
+                <li><strong>Massage « Blue Lagoon » :</strong> Un soin fluide inspiré des sources chaudes d'Islande[cite: 26].</li>
+                <li><strong>Thalasso :</strong> Enveloppements marins reminéralisants[cite: 25].</li>
+                <li><strong>Massage Suédois :</strong> Détente musculaire classique[cite: 24].</li>
+            </ul>
+
+            <a href="reservation.html" class="btn" style="margin-top: 30px;">Réserver</a>
+        </div>
+        <div class="univ-img-block" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800');"></div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Rituels du Monde</h4>
+                <p>12 Rue du Voyage, Rennes</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
